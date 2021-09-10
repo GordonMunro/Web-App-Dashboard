@@ -38,32 +38,6 @@ main {
 .widget-container-full, .widget-container-half {
     width: 95vw;
 }
-@media (min-width: 768px) {
-    .grid-container {
-        grid-template-columns: 55px 1fr;
-        grid-template-areas: 
-        "header header"
-        "nav main";
-    }
-    main {
-        grid-template-columns: 50%;
-    }
-    .traffic, .social {
-        grid-column: 1 / span 2;
-    }
-    .daily, .members, .message {
-        grid-column: 1 / span 1;
-    }
-    .mobile, .activity, .settings {
-        grid-column: 2 / span 1;
-    }
-    .widget-container-full {
-        width: 90vw;
-    }
-    .widget-container-half {
-        width: 45vw;
-    }
-}
 /* ============================================= */
 /*                Navigation                     */
 /* ============================================= */
@@ -274,7 +248,8 @@ header h3 {
 }
 .members,
 .recent-activity,
-.message {
+.message,
+.settings {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -302,7 +277,8 @@ header h3 {
 }
 /* MESSAGES */
 input[type="text"],
-textarea {
+textarea,
+select {
     margin: .5em 1em 1em;
     border: 2px solid rgba(209, 206, 206, 0.5);
     padding: 1rem;
@@ -316,7 +292,8 @@ textarea {
     height: 8em;
 }
 input::placeholder,
-textarea::placeholder {
+textarea::placeholder,
+select {
     color: rgb(185, 184, 184);
 }
 .button-primary {
@@ -335,10 +312,84 @@ textarea::placeholder {
 .switch {
     display: flex;
     flex-direction: row;
+    width: 90%;
+    margin: 1em 1em;
+    align-items: center;
 }
 .switch-label {
     margin-right: auto;
 }
+input[type="text"]:focus,
+input[type="checkbox"]:focus,
+textarea:focus
+ {
+    outline: none;
+    border: 2px solid rgb(177, 170, 170);
+}
+
 select {
     width: 90%;
+}
+select:focus {
+    color: black;
+}
+.settings-button {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: .5em 0;
+}
+.button-disabled {
+    width: 45%;
+    height: 3em;
+    color: white;
+    border: none;
+    background-color: grey;
+    border-radius: 5px;
+    margin: .5em 0 .5em 1em;
+    flex-grow: 1;
+}
+#save {
+    width: 45%;
+    flex-grow: 1;
+    margin: 0;
+}
+@media (min-width: 768px) {
+    .grid-container {
+        grid-template-columns: 55px 1fr;
+        grid-template-areas: 
+        "header header"
+        "nav main";
+    }
+    main {
+        grid-template-columns: 50%;
+    }
+    .traffic, .social {
+        grid-column: 1 / span 2;
+    }
+    .daily, .members, .message {
+        grid-column: 1 / span 1;
+    }
+    .mobile, .activity, .settings {
+        grid-column: 2 / span 1;
+    }
+    .widget-container-full {
+        width: 90vw;
+    }
+    .widget-container-half {
+        width: 45vw;
+    }
+    nav {
+        justify-content: flex-start;
+        height: auto;
+        flex-direction: column;
+        padding-top: .5em;
+    }
+    nav a {
+        margin: 1em;
+    }
+    .spacing-block {
+        flex-basis: 90%;
+    }
 }
