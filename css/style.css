@@ -34,6 +34,7 @@ nav {
 main {
     grid-area: main;
     display: grid;
+    grid-template-columns: 100%;
 }
 .widget-container-full, .widget-container-half {
     width: 95vw;
@@ -121,7 +122,7 @@ header h3 {
     border-left: 2px solid lightgrey;
     border-bottom: 2px solid lightgrey;
     height: 3em;
-    flex-basis: 70%;
+    flex-basis: 100%;
 }
 .headline {
     padding: 0 0.5em;
@@ -268,8 +269,8 @@ header h3 {
     padding: 1em;
     width: 90%;
 }
-.members div:last-child {
-    width: 100%;
+.members div:last-child, .recent-activity div:last-child {
+    border: none;
 }
 .recent-activity a {
     color: black;
@@ -305,7 +306,7 @@ select {
     border-radius: 5px;
     margin: .5em 0 1em;
 }
-.message {
+.message, .members, .recent-activity {
     border-bottom: 2px solid rgba(209, 206, 206, 0.5);
 }
 /* Settings */
@@ -364,21 +365,22 @@ select:focus {
     }
     main {
         grid-template-columns: 50%;
+        padding-left: .55em;
     }
-    .traffic, .social {
+    .traffic, .social, .alert, .main-header, .members, .message, .recent-activity, .settings {
         grid-column: 1 / span 2;
     }
-    .daily, .members, .message {
+    .daily {
         grid-column: 1 / span 1;
     }
-    .mobile, .activity, .settings {
+    .mobile {
         grid-column: 2 / span 1;
     }
     .widget-container-full {
         width: 90vw;
     }
     .widget-container-half {
-        width: 45vw;
+        width: 40vw;
     }
     nav {
         justify-content: flex-start;
@@ -389,7 +391,38 @@ select:focus {
     nav a {
         margin: 1em;
     }
-    .spacing-block {
-        flex-basis: 90%;
+    .daily {
+        border-right: 2px solid rgba(209, 206, 206, 0.5);
+    }
+    .social {
+        padding: 0 .5em .5em;
+    }
+    .social-flex {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .social-container {
+        flex-grow: 1;
+        margin: .5em;
+    }
+    .members, .recent-activity {
+        padding: .5em 1em;
+    }
+    .members-container {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding: 1em 0;
+    }
+    .members-text {
+        text-align: left;
+        margin-left: 1em;
+        margin-right: auto;
+    }
+    .members h3, .recent-activity h3 {
+        margin: 1em 0 .5em 0;
+    }
+    form {
+        width: 100%;
     }
 }
