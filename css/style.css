@@ -37,7 +37,7 @@ main {
     grid-template-columns: 100%;
 }
 .widget-container-full, .widget-container-half {
-    width: 95vw;
+    width: 90vw;
 }
 /* ============================================= */
 /*                Navigation                     */
@@ -78,10 +78,27 @@ header h2 {
     margin-right: auto;
     font-weight: 400;
 }
+/* keyframe adapted from https://www.w3schools.com/howto/howto_css_shake_image.asp */
+@keyframes shake {
+    0% { transform: rotate(5deg); }
+    10% { transform: rotate(-5deg); }
+    20% { transform: rotate(5deg); }
+    30% { transform: rotate(-5deg); }
+    40% { transform: rotate(5deg); }
+    50% { transform: rotate(-5deg); }
+    60% { transform: rotate(5deg); }
+    70% { transform: rotate(-5deg); }
+    80% { transform: rotate(5deg); }
+    90% { transform: rotate(-5deg); }
+    100% { transform: rotate(5deg); }
+  }
 header svg {
     height: 1.5em;
     width: 1.5em;
     fill: white;
+}
+header svg:hover {
+    animation: shake 1s;
 }
 header h3 {
     font-weight: 300;
@@ -153,12 +170,13 @@ header h3 {
     justify-content: space-around;
     align-items: center;
 }
-.hourly {
+.traffic-active {
     background-color: rgb(125, 192, 125);
     padding: .5em 1em;
     text-align: center;
     border-radius: 20px;
     color: white;
+    width: 6em;
 }
 .traffic-header h3,
 .mobile-users h3 {
@@ -431,7 +449,7 @@ select:focus {
     }
     .social-container {
         margin: .5em;
-        width: 35%;
+        width: 32%;
     }
     .members, .recent-activity {
         padding: .5em 1em;
