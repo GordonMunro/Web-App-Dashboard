@@ -206,7 +206,7 @@ header h3 {
     border-radius: .3em;
     height: 6em;
     margin: .5em 1em;
-    padding: 1em;
+    /* padding: 1em; */
     background-color: rgba(209, 206, 206, 0.3);
 }
 .social-image {
@@ -216,6 +216,7 @@ header h3 {
     border-radius: 100%;
     display: flex;
     align-items: center;
+    margin-left: .5em;
 }
 .social-image svg {
     fill: white;
@@ -429,8 +430,8 @@ select:focus {
         justify-content: space-evenly;
     }
     .social-container {
-        flex-grow: 1;
         margin: .5em;
+        width: 35%;
     }
     .members, .recent-activity {
         padding: .5em 1em;
