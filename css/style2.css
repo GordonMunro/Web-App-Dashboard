@@ -43,8 +43,8 @@ main {
 /*                Navigation                     */
 /* ============================================= */
 nav svg {
-    height: 1.75em;
-    width: 1.75em;
+    height: 2.25em;
+    width: 2.25em;
     fill: white;
 }
 nav {
@@ -182,7 +182,7 @@ header h3 {
 /* Mobile Users */
 
 #mobile-chart {
-    padding: .5em;
+    padding: 1em .5em;
 }
 /* Social Container */
 .social {
@@ -364,24 +364,53 @@ select:focus {
         "nav main";
     }
     main {
-        grid-template-columns: 50%;
+        grid-template-columns: 1fr 1fr;
+        /* padding-left: .55em; */
+        grid-template-areas: 
+        "main-header main-header"
+        "alert alert"
+        "traffic traffic"
+        "daily mobile"
+        "social social"
+        "members members"
+        "recent recent"
+        "message message"
+        "settings settings";
     }
-    .traffic, .social, .alert, .main-header, .members, .message, .recent-activity, .settings {
-        grid-column: 1 / span 2;
+    .traffic {
+        grid-area: traffic;
+    } 
+    .social {
+        grid-area: social;
+    }
+    .alert {
+        grid-area: alert;
+    } 
+    .main-header {
+        grid-area: main-header;
+    } 
+    .members {
+        grid-area: members;
+    } 
+    .message {
+        grid-area: message;
+    } 
+    .recent-activity {
+        grid-area: recent;
+    } .settings {
+        grid-area: settings;
     }
     .daily {
-        grid-column: 1 / span 1;
+        grid-area: daily;
     }
     .mobile {
-        grid-column: 2 / span 1;
+        grid-area: mobile;
     }
     .widget-container-full {
         width: 90vw;
-        margin: 1em;
     }
     .widget-container-half {
         width: 40vw;
-        margin: 1em;
     }
     nav {
         justify-content: flex-start;
@@ -390,36 +419,15 @@ select:focus {
         padding-top: .5em;
     }
     nav a {
-        margin-top: 1em;
+        margin: 1em;
     }
     .daily {
         border-right: 2px solid rgba(209, 206, 206, 0.5);
     }
-    .daily h3 {
-        margin: 1.5em 0 3em 1em;
-    }
-    .mobile-users h3 {
-        margin: 1.5em 0 0 1em;
-    }
     .traffic, 
     .daily,
-    .mobile-users,
-    nav {
+    .mobile-users {
         padding: 0;
-    }
-    .traffic-header {
-        display: flex;
-        align-items: center;
-        margin: 1em;
-    }
-    .traffic-header h3 {
-        margin-right: auto;
-    }
-    .traffic-nav {
-        justify-content: flex-end;
-    }
-    .traffic-nav-link {
-        margin: 0 .5em;
     }
     .social {
         padding: 0 .5em .5em;
@@ -451,13 +459,5 @@ select:focus {
     }
     form {
         width: 100%;
-    }
-    input[type="text"],
-    textarea,
-    select,
-    #send,
-    .switch,
-    .settings-button {
-        width: 95%;
     }
 }
