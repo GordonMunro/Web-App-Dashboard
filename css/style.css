@@ -118,7 +118,7 @@ header h3 {
     align-items: center;
 }
 .spacing-block {
-    background-color: rgb(252, 247, 247);
+    background-color: rgb(240, 236, 236);
     border-left: 2px solid lightgrey;
     border-bottom: 2px solid lightgrey;
     height: 3em;
@@ -142,7 +142,7 @@ header h3 {
     align-items: center;
     padding: 1em;
     font-weight: 300;
-    margin: 0.5em;
+    margin: 1em;
 }
 .alert-banner-close {
     margin-left: auto;
@@ -198,7 +198,7 @@ header h3 {
 }
 
 .social-container {
-    max-width: 90%;
+    max-width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -376,7 +376,7 @@ select:focus {
         grid-column: 2 / span 1;
     }
     .widget-container-full {
-        width: 90vw;
+        width: 85vw;
         margin: 1em;
     }
     .widget-container-half {
@@ -461,6 +461,24 @@ select:focus {
         width: 95%;
     }
 }
-/* @media (min-width: 1024px) {
-
-} */
+@media (min-width: 1024px) {
+     .members, .message  {
+        grid-column: 1 / span 1;
+        border-right: 2px solid rgba(209, 206, 206, 0.5);
+    }
+    .settings {
+        justify-content: space-around;
+    }
+    .recent-activity, .settings {
+        grid-column: 2 / span 1;
+    }
+    .switch-email {
+        margin-right: 6em;
+    }
+    .switch-profile {
+        margin-right: 8.2em;
+    }
+    select {
+        margin-bottom: .2em;
+    }
+}
