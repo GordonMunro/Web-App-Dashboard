@@ -44,7 +44,7 @@ main {
 /* ============================================= */
 nav svg {
     height: 1.75em;
-    width: 1.75em;
+    
     fill: white;
 }
 nav {
@@ -64,7 +64,7 @@ header {
     background-color: rgb(99, 105, 189);
     color: white;
     align-items: center;
-    width: 100%;
+    /* width: 100%; */
     padding: 0.5em;
     height: 4.5em;
 }
@@ -436,7 +436,7 @@ select:focus {
         padding: .5em 1em;
     }
     .members-container {
-        width: 100%;
+        width: 90%;
         display: flex;
         align-items: center;
         padding: 1em 0;
@@ -450,7 +450,7 @@ select:focus {
         margin: 1em 0 .5em 0;
     }
     form {
-        width: 100%;
+        width: 90%;
     }
     input[type="text"],
     textarea,
@@ -461,3 +461,6 @@ select:focus {
         width: 95%;
     }
 }
+/* @media (min-width: 1024px) {
+
+} */
