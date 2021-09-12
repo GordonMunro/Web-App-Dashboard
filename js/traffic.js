@@ -98,9 +98,7 @@ const trafficNav = document.querySelector('.traffic-nav');
 trafficNav.addEventListener('click', (e) => {
     if (e.target.tagName === 'LI') {
         e.target.className = "active";
-    } else {
-        trafficNav[0].className = 'traffic-active';
-    }
+    } 
     const liTraffic = document.querySelectorAll('.traffic-nav li');
     for (let i = 0; i < liTraffic.length; i++) {
         const liActive = liTraffic[i];
