@@ -112,18 +112,6 @@ trafficNav.addEventListener('click', (e) => {
             liActive.className = 'traffic-nav-link';
         } 
     }
-    // if (e.target === liTraffic[0]) {
-    //     updateChart(trafficChart, hourlyData);
-    // }
-    // else if (e.target === liTraffic[1]) {
-    //     updateChart(trafficChart, dataDaily);
-    // }
-    // else if (e.target === liTraffic[2]) {
-    //     updateChart(trafficChart, weeklyData);
-    // }
-    // else if (e.target === liTraffic[3]) {
-    //     updateChart(trafficChart, monthlyData);
-    // }  
     
 });
 
