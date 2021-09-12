@@ -72,13 +72,13 @@
             <div class="traffic-header">
                 <h3>TRAFFIC</h3>
                 <ul class="traffic-nav">
-                    <li class="traffic-active">Hourly</li>
-                    <li class="traffic-nav-link">Daily</li>
-                    <li class="traffic-nav-link">Weekly</li>
-                    <li class="traffic-nav-link">Monthly</li>
+                    <li id="hourly" class="traffic-nav-link traffic-active">Hourly</li>
+                    <li id="daily" class="traffic-nav-link">Daily</li>
+                    <li id="weekly" class="traffic-nav-link">Weekly</li>
+                    <li id="monthly" class="traffic-nav-link">Monthly</li>
                 </ul>
             </div>
-            <div class="widget-container-full">
+            <div id="traffic-div" class="widget-container-full">
                 <!-- element line graph will attach to -->
                 <canvas id="traffic-chart"></canvas>
             </div>

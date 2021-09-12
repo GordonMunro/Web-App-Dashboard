@@ -1,9 +1,7 @@
 const trafficCanvas = document.getElementById('traffic-chart');
-let trafficData = {
+let defaultData = {
     labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3", "4-10", "11-17", "18-24", "25-31"],
-    datasets: [
-        {
-        label: 'Hourly',
+    datasets: [{
         data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500],
         backgroundColor: 'rgba(116, 119, 191, 0.3)',
         borderWidth: 1,
@@ -12,9 +10,24 @@ let trafficData = {
             above: 'rgba(99, 105, 189, 0.4)'
           },
           tension: .4
-    },
-    {
-        label: 'Daily',
+    }]
+};
+let hourlyData = {
+    labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3", "4-10", "11-17", "18-24", "25-31"],
+    datasets: [{
+        data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500],
+        backgroundColor: 'rgba(116, 119, 191, 0.3)',
+        borderWidth: 1,
+        fill: {
+            target: 'origin',
+            above: 'rgba(99, 105, 189, 0.4)'
+          },
+          tension: .4
+    }]
+};
+let dataDaily = {
+    labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3", "4-10", "11-17", "18-24", "25-31"],
+    datasets: [{
         data: [950, 1350, 2000, 1000, 1800, 1350, 1550, 1850, 2050, 1300, 2400],
         backgroundColor: 'rgba(116, 119, 191, 0.3)',
         borderWidth: 1,
@@ -23,9 +36,11 @@ let trafficData = {
             above: 'rgba(99, 105, 189, 0.4)'
           },
           tension: .4
-    },
-    {
-        label: 'Weekly',
+    }]
+};
+let weeklyData = {
+    labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3", "4-10", "11-17", "18-24", "25-31"],
+    datasets: [{
         data: [650, 1050, 3000, 2500, 1200, 1450, 2250, 1850, 1250, 1700, 2000],
         backgroundColor: 'rgba(116, 119, 191, 0.3)',
         borderWidth: 1,
@@ -34,9 +49,11 @@ let trafficData = {
             above: 'rgba(99, 105, 189, 0.4)'
           },
           tension: .4
-    },
-    {
-        label: 'Monthly',
+    }]
+};
+let monthlyData = {
+    labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3", "4-10", "11-17", "18-24", "25-31"],
+    datasets: [{
         data: [1750, 2250, 1000, 2500, 1200, 750, 1850, 1950, 2050, 1300, 1200],
         backgroundColor: 'rgba(116, 119, 191, 0.3)',
         borderWidth: 1,
@@ -45,8 +62,7 @@ let trafficData = {
             above: 'rgba(99, 105, 189, 0.4)'
           },
           tension: .4
-    }
-]
+    }]
 };
 
 let trafficOptions = {
@@ -67,36 +83,40 @@ let trafficOptions = {
 };
 let trafficChart = new Chart(trafficCanvas, {
     type: 'line',
-    data: trafficData[i],
+    data: defaultData,
     options: trafficOptions
 });
 const trafficNav = document.querySelector('.traffic-nav');
-// select button, add active class, remove class from previous button, generate new chart
+const updateChart = (chart, newData) => {
+    chart.data.labels = newData.labels;
+    chart.data.datasets[0].data = newData.datasets[0].data;
+    chart.update();
+};
 
-trafficNav.addEventListener('click', () => {
+// select button, add active class, remove class from previous button, generate new chart
+trafficNav.addEventListener('click', (e) => {
+    e.target.className = "active";
     const liTraffic = document.querySelectorAll('.traffic-nav li');
     for (let i = 0; i < liTraffic.length; i++) {
         const liActive = liTraffic[i];
-        if (liActive.textContent === 'Hourly') {
-            liActive.className = 'traffic-active';
-            let trafficChart = new Chart(trafficCanvas, {
-                type: 'line',
-                data: trafficDataHourly,
-                options: trafficOptions
-            });
+        if (liActive.className === 'active') {
+            liActive.className += ' traffic-active';      
         } else {
-            liActive.className = '';
-            trafficCanvas.remove();
-        }
-        if (liActive.textContent === 'Daily') {
-            liActive.className = 'traffic-active';
-            let trafficChart = new Chart(trafficCanvas, {
-                type: 'line',
-                data: trafficDataDaily,
-                options: trafficOptions
-            });
-        } else {
-            liActive.className = '';
-        }
+            liActive.className = 'traffic-nav-link';
+        } 
     }
+    if (e.target === liTraffic[0]) {
+        updateChart(trafficChart, hourlyData);
+    }
+    if (e.target === liTraffic[1]) {
+        updateChart(trafficChart, dataDaily);
+    }
+    if (e.target === liTraffic[2]) {
+        updateChart(trafficChart, weeklyData);
+    }
+    if (e.target === liTraffic[3]) {
+        updateChart(trafficChart, monthlyData);
+    }  
+    
 });
+
