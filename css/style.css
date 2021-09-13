@@ -170,6 +170,9 @@ header h3 {
     justify-content: space-around;
     align-items: center;
 }
+.traffic li {
+    cursor: pointer;
+}
 .traffic-active {
     background-color: rgb(125, 192, 125);
     padding: .5em 1em;
@@ -293,6 +296,35 @@ header h3 {
     color: black;
     font-weight: 700;
 }
+/* Search Bar
+/* Following search code from  https://www.w3schools.com/howto/howto_js_autocomplete.asp */
+.autocomplete {
+    /*the container must be positioned relative:*/
+    position: relative;
+}
+
+.autocomplete-items {
+    margin-top: -1em;
+    margin-left: 1.1em;
+    max-width: 95%;
+    text-align: left;
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    /*position the autocomplete items to be the same width as the container:*/
+    top: 100%;
+    left: 0;
+    right: 0;
+}
+.autocomplete-items div {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #fff;
+    border-bottom: 1px solid #d4d4d4;
+}
+
 /* MESSAGES */
 input[type="text"],
 textarea,

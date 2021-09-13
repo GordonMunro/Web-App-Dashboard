@@ -217,8 +217,11 @@
         <!-- messaging widget -->
         <section class="message">
             <h3>MESSAGE USER</h3>
-            <form class="widget-container" action="index.html" method="POST">
-                <input type="text" placeholder="Search for user" class="form-field" id="userField">
+            <form autocomplete="off" class="widget-container" action="/action_page.php" method="POST">
+                <!-- Search code from adapted https://www.w3schools.com/howto/howto_js_autocomplete.asp-->
+                <div class="autocomplete">
+                    <input type="text" placeholder="Search for user" name="memberSearch" class="form-field" id="myInput">
+                </div>
                 <textarea name="message" id="messageField" placeholder="Message for user" class="form-area"></textarea>
                 <button class="button-primary" id="send">Send</button>
             </form>
