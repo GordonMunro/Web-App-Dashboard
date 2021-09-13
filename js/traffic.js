@@ -12,7 +12,7 @@ let defaultData = {
           tension: .4
     }]
 };
-let hourly = {
+let hourlyData = {
     labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3", "4-10", "11-17", "18-24", "25-31"],
     datasets: [{
         data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500],
@@ -25,7 +25,7 @@ let hourly = {
           tension: .4
     }]
 };
-let daily = {
+let dataDaily = {
     labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3", "4-10", "11-17", "18-24", "25-31"],
     datasets: [{
         data: [950, 1350, 2000, 1000, 1800, 1350, 1550, 1850, 2050, 1300, 2400],
@@ -38,7 +38,7 @@ let daily = {
           tension: .4
     }]
 };
-let weekly = {
+let weeklyData = {
     labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3", "4-10", "11-17", "18-24", "25-31"],
     datasets: [{
         data: [650, 1050, 3000, 2500, 1200, 1450, 2250, 1850, 1250, 1700, 2000],
@@ -51,7 +51,7 @@ let weekly = {
           tension: .4
     }]
 };
-let monthly = {
+let monthlyData = {
     labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3", "4-10", "11-17", "18-24", "25-31"],
     datasets: [{
         data: [1750, 2250, 1000, 2500, 1200, 750, 1850, 1950, 2050, 1300, 1200],
@@ -104,8 +104,19 @@ trafficNav.addEventListener('click', (e) => {
         const liActive = liTraffic[i];
         if (liActive.className === 'active') {
             liActive.className += ' traffic-active';
-            let liData = liActive.textContent.toLocaleLowerCase();
-            updateChart(trafficChart, liData);      
+            let liName = liActive.textContent;
+        if (liName === 'Hourly') {
+            updateChart(trafficChart, hourlyData);
+        }
+        else if (liName === 'Daily') {
+            updateChart(trafficChart, dataDaily);
+        }
+        else if (liName === 'Weekly') {
+            updateChart(trafficChart, weeklyData);
+        }
+        else if (liName === 'Monthly') {
+            updateChart(trafficChart, monthlyData);
+        }  
         } else {
             liActive.className = 'traffic-nav-link';
         } 
