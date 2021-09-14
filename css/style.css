@@ -64,7 +64,6 @@ header {
     background-color: rgb(99, 105, 189);
     color: white;
     align-items: center;
-    /* width: 100%; */
     padding: 0.5em;
     height: 4.5em;
 }
@@ -126,6 +125,27 @@ header h3 {
     flex-direction: row;
     align-items: center;
 }
+.bell-alert {
+    border: 2px solid rgba(209, 206, 206, 0.5);
+    border-radius: .3em;
+    background-color: rgb(209, 206, 206);
+    z-index: 1;
+    padding: .5em 1em;
+    opacity: 1;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 10%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.alert-bell-close {
+    margin-left: auto;
+    cursor: pointer;
+}
 /* ============================================= */
 /*              Main Header                      */
 /* ============================================= */
@@ -160,6 +180,7 @@ header h3 {
     padding: 1em;
     font-weight: 300;
     margin: 1em;
+    cursor: pointer;
 }
 .alert-banner-close {
     margin-left: auto;

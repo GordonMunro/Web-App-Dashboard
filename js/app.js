@@ -14,42 +14,7 @@ alertBanner.addEventListener('click', e => {
     }
 });
 // Chart Widgets
-// Traffic Chart
-// const trafficCanvas = document.getElementById('traffic-chart');
-// let trafficData = {
-//     labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3", "4-10", "11-17", "18-24", "25-31"],
-//     datasets: [{
-//         data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500],
-//         backgroundColor: 'rgba(116, 119, 191, 0.3)',
-//         borderWidth: 1,
-//         fill: {
-//             target: 'origin',
-//             above: 'rgba(99, 105, 189, 0.4)'
-//           },
-//           tension: .4
-//     }]
-// };
-// let trafficOptions = {
-//     aspectRatio: 2.5,
-//     animation: {
-//         duration: 0
-//     },
-//     scales: {
-//         y: {
-//           beginAtZero: true
-//         }
-//     },
-//     plugins: {
-//         legend: {
-//           display: false
-//         }
-//     }
-// };
-// let trafficChart = new Chart(trafficCanvas, {
-//     type: 'line',
-//     data: trafficData,
-//     options: trafficOptions
-// });
+
 // Bar Graph
 const dailyCanvas = document.getElementById("daily-chart");
 const dailyData = {
@@ -129,12 +94,28 @@ send.addEventListener('click', () => {
     }
 });
 
-// Alerts 
-const bell = document.querySelector('.bell');
-
+// Alert Banner
+const bell = document.querySelector('.bell-svg');
+const bellAlert = document.querySelector('.alert-div')
+bellAlert.style.display = 'none';
 bell.addEventListener('click', () => {
-    alert('You have 2 new messages. You have 2 new followers.');
+    bellAlert.style.display = 'flex';
+    bellAlert.innerHTML =
+`
+<div class="bell-alert">
+    <p><strong>Alert:</strong> You have 2 new messages. You have 2 new followers.</p>
+    <p class="alert-bell-close">x</p>
+</div>
+`;
+    
 });
+bellAlert.addEventListener('click', e => {
+    const element = e.target;
+    if (element.classList.contains("alert-bell-close")) {
+        bellAlert.style.display = 'none';
+    }
+});
+
 /* Following search code from https://www.w3schools.com/howto/howto_js_autocomplete.asp */
 // Member Search 
 let memberList = ["Victoria Chambers", "Dale Byrn", "Dawn Wood", "Dan Oliver"];
@@ -235,3 +216,30 @@ function autocomplete(inp, arr) {
   });
 }
 autocomplete(document.getElementById("myInput"), memberList);
+
+// Local Storage
+// get the buttons, get the selects
+const checkboxes = document.querySelectorAll('input[type="checkbox"');
+
+
+for (let i = 0; i < checkboxes.length; i++) {
+    const checkedBox = checkboxes[i];
+    checkedBox.addEventListener('click', () => {
+        if (checkedBox.checked) {
+            checkedBox.removeAttribute('checked');
+            }
+        checkedBox.setAttribute('checked', 'true');  
+  });   
+}
+
+// for (let i = 0; i < checkboxes.length; i++) {
+//     const checkedBox = checkboxes[i];
+//     checkedBox.addEventListener('click', () => {
+//     //  if (!checkedBox.checked) {
+//     //     checkedBox.setAttribute('checked', '');  
+//     //  }
+    
+//         checkedBox.removeAttribute('checked');
+      
+//   });   
+// }
