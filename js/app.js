@@ -220,26 +220,42 @@ autocomplete(document.getElementById("myInput"), memberList);
 // Local Storage
 // get the buttons, get the selects
 const checkboxes = document.querySelectorAll('input[type="checkbox"');
+const emailBox = document.getElementById('email-box');
+const profileBox = document.getElementById('profile-box');
+const select = document.querySelector('select');
+const saveButton = document.getElementById('save');
+const cancelButton = document.getElementById('cancel');
 
+// Following local storage code adapted from Lisa Woodson's youtube vide
+// https://www.youtube.com/watch?v=BftgdwADR0k&t=990s
 
-for (let i = 0; i < checkboxes.length; i++) {
-    const checkedBox = checkboxes[i];
-    checkedBox.addEventListener('click', () => {
-        if (checkedBox.checked) {
-            checkedBox.removeAttribute('checked');
-            }
-        checkedBox.setAttribute('checked', 'true');  
-  });   
+const save = () =>{
+
+    for (let i = 0; i < checkboxes.length; i++) {
+        localStorage.setItem(checkboxes[i].value, checkboxes[i].checked);    
+    }
+    localStorage.setItem('timezone', select.value);
+
 }
-
-// for (let i = 0; i < checkboxes.length; i++) {
-//     const checkedBox = checkboxes[i];
-//     checkedBox.addEventListener('click', () => {
-//     //  if (!checkedBox.checked) {
-//     //     checkedBox.setAttribute('checked', '');  
-//     //  }
-    
-//         checkedBox.removeAttribute('checked');
-      
-//   });   
-// }
+const load = () => {
+    for (let i = 0; i < checkboxes.length; i++) {
+        checkboxes[i].checked = localStorage.getItem(checkboxes[i].value) === 'true' ? true:false;
+    }
+    if (localStorage.getItem('timezone')) {
+    select.value = localStorage.getItem('timezone');
+    }
+}
+const remove = () => {
+    for (let i = 0; i < checkboxes.length; i++) {
+        localStorage.setItem(checkboxes[i].value, checkboxes[i].checked=false);    
+    }
+    localStorage.removeItem('timezone');
+}
+saveButton.addEventListener('click', () => {
+    save();
+    saveButton.style.backgroundColor = "lightgrey";
+});
+cancelButton.addEventListener('click', () => {
+    remove();
+    cancelButton.style.backgroundColor = "lightgrey";
+});
