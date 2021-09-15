@@ -13,6 +13,9 @@ li {
 a {
     text-decoration: none;
 }
+form {
+    width: 100%;
+}
  /* ============================================= */
 /*              Grid System                      */
 /* ============================================= */
@@ -521,9 +524,7 @@ select:focus {
     .members h3, .recent-activity h3 {
         margin: 1em 0 .5em 0;
     }
-    form {
-        width: 90%;
-    }
+
     input[type="text"],
     textarea,
     select,
