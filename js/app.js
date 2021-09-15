@@ -239,7 +239,7 @@ const save = () =>{
 }
 const load = () => {
     for (let i = 0; i < checkboxes.length; i++) {
-        checkboxes[i].checked = localStorage.getItem(checkboxes[i].value) === 'true' ? true:false;
+        checkboxes[i].checked = localStorage.getItem(checkboxes[i].value) === 'true';
     }
     if (localStorage.getItem('timezone')) {
     select.value = localStorage.getItem('timezone');
