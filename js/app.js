@@ -88,7 +88,7 @@ send.addEventListener('click', () => {
     } else if (user.value === "") {
         alert("Please fill out user field before sending");
     } else if (message.value === "") {
-        alert("Please fill out message field before sending")
+        alert("Please fill out message field before sending");
     } else {
         alert(`Message successfully sent to ${user.value}`);
     }
@@ -96,7 +96,7 @@ send.addEventListener('click', () => {
 
 // Alert Banner
 const bell = document.querySelector('.bell-svg');
-const bellAlert = document.querySelector('.alert-div')
+const bellAlert = document.querySelector('.alert-div');
 bellAlert.style.display = 'none';
 bell.addEventListener('click', () => {
     bellAlert.style.display = 'flex';
