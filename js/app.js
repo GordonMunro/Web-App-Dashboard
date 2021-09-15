@@ -226,7 +226,7 @@ const select = document.querySelector('select');
 const saveButton = document.getElementById('save');
 const cancelButton = document.getElementById('cancel');
 
-// Following local storage code adapted from Lisa Woodson's youtube vide
+// Following local storage code adapted from Lisa Woodson's youtube video
 // https://www.youtube.com/watch?v=BftgdwADR0k&t=990s
 
 const save = () =>{
@@ -250,6 +250,7 @@ const remove = () => {
         localStorage.setItem(checkboxes[i].value, checkboxes[i].checked=false);    
     }
     localStorage.removeItem('timezone');
+    select.value = '3';
 }
 saveButton.addEventListener('click', () => {
     save();
@@ -258,4 +259,5 @@ saveButton.addEventListener('click', () => {
 cancelButton.addEventListener('click', () => {
     remove();
     cancelButton.style.backgroundColor = "lightgrey";
+    
 });
