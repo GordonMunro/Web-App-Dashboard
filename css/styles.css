@@ -429,7 +429,10 @@ select:focus {
     flex-grow: 1;
     margin: 0;
 }
-
+.recent-arrow {
+    display: none;
+    color: rgb(99, 105, 189);
+}
 /* media queries */
 @media (min-width: 768px) {
     .grid-container {
@@ -532,6 +535,9 @@ select:focus {
     .switch,
     .settings-button {
         width: 95%;
+    }
+    .recent-arrow {
+        display: inline;
     }
 }
 @media (min-width: 1024px) {

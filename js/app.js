@@ -95,26 +95,26 @@ send.addEventListener('click', () => {
 });
 
 // Alert Banner
-const bell = document.querySelector('.bell-svg');
-const bellAlert = document.querySelector('.alert-div');
-bellAlert.style.display = 'none';
-bell.addEventListener('click', () => {
-    bellAlert.style.display = 'flex';
-    bellAlert.innerHTML =
-`
-<div class="bell-alert">
-    <p><strong>Alert:</strong> You have 2 new messages. You have 2 new followers.</p>
-    <p class="alert-bell-close">x</p>
-</div>
-`;
+// const bell = document.querySelector('.bell-svg');
+// const bellAlert = document.querySelector('.alert-div');
+// bellAlert.style.display = 'none';
+// bell.addEventListener('click', () => {
+//     bellAlert.style.display = 'flex';
+//     bellAlert.innerHTML =
+// `
+// <div class="bell-alert">
+//     <p><strong>Alert:</strong> You have 2 new messages. You have 2 new followers.</p>
+//     <p class="alert-bell-close">x</p>
+// </div>
+// `;
     
-});
-bellAlert.addEventListener('click', e => {
-    const element = e.target;
-    if (element.classList.contains("alert-bell-close")) {
-        bellAlert.style.display = 'none';
-    }
-});
+// });
+// bellAlert.addEventListener('click', e => {
+//     const element = e.target;
+//     if (element.classList.contains("alert-bell-close")) {
+//         bellAlert.style.display = 'none';
+//     }
+// });
 
 /* Following search code from https://www.w3schools.com/howto/howto_js_autocomplete.asp */
 // Member Search 
@@ -262,3 +262,4 @@ cancelButton.addEventListener('click', () => {
     cancelButton.style.backgroundColor = "lightgrey";
     saveButton.style.backgroundColor = "rgb(99, 105, 189)";
 });
+load();
