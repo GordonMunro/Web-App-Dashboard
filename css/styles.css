@@ -127,28 +127,51 @@ header h3 {
     display: flex;
     flex-direction: row;
     align-items: center;
-}
-.bell-alert {
-    border: 2px solid rgba(209, 206, 206, 0.5);
-    border-radius: .3em;
-    background-color: rgb(209, 206, 206);
-    z-index: 1;
-    padding: .5em 1em;
-    opacity: 1;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 10%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-}
-.alert-bell-close {
-    margin-left: auto;
     cursor: pointer;
 }
+/* following dropdown code from https://www.w3schools.com/howto/howto_js_dropdown.asp */
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 300px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: 1.25em;
+    right: 2em;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: flex;
+    border: 1px solid grey;
+  }
+  .dropdown-content p::before {
+        background-color: lime;
+        height: 8px;
+        width: 8px;
+        border-radius: 100%;
+        content: "";
+        display: inline-block;
+        margin-right: .6em;
+        margin-bottom: 1px;
+    }
+  
+  .close-note {
+    margin-left: auto;
+  }
+  .dropdown a:hover {background-color: #ddd;}
+  
+  .show {display: block;}
+
 /* ============================================= */
 /*              Main Header                      */
 /* ============================================= */
@@ -383,6 +406,7 @@ select {
     border-bottom: 2px solid rgba(209, 206, 206, 0.5);
 }
 /* Settings */
+
 .switch {
     display: flex;
     flex-direction: row;

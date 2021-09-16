@@ -16,6 +16,7 @@
  */
 /* Hide by default
  */
+
 .switch-toggle a,
 .switch-light span span {
   display: none; }
@@ -489,5 +490,5 @@
     -webkit-transform: translate3d(0, 0, 0); }
   to {
     -webkit-transform: translate3d(0, 0, 0); } }
-
+  
 /*# sourceMappingURL=toggle-switch.css.map */
