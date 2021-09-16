@@ -78,7 +78,7 @@ let mobileChart = new Chart(mobileCanvas, {
 });
 
 // Messaging Section
-const user = document.getElementById('userField');
+const user = document.querySelector('.userField');
 const message = document.getElementById('messageField');
 const send = document.getElementById('send');
 
@@ -255,9 +255,10 @@ const remove = () => {
 saveButton.addEventListener('click', () => {
     save();
     saveButton.style.backgroundColor = "lightgrey";
+    cancelButton.style.backgroundColor = "grey";
 });
 cancelButton.addEventListener('click', () => {
     remove();
     cancelButton.style.backgroundColor = "lightgrey";
-    
+    saveButton.style.backgroundColor = "rgb(99, 105, 189)";
 });
