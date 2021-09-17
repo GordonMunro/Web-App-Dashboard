@@ -96,8 +96,6 @@ send.addEventListener('click', () => {
 
 // Alert Banner
 // following dropdown code adapted from https://www.w3schools.com/howto/howto_js_dropdown.asp
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
 const bell = document.querySelector('.bell-svg');
 const bellAlert = document.querySelector('#myDropdown');
 bell.addEventListener('click', () => {
