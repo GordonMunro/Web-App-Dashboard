@@ -274,7 +274,6 @@ header h3 {
     border-radius: .3em;
     height: 6em;
     margin: .5em 1em;
-    /* padding: 1em; */
     background-color: rgba(209, 206, 206, 0.3);
 }
 .social-image {
@@ -343,8 +342,7 @@ header h3 {
     color: black;
     font-weight: 700;
 }
-/* Search Bar
-/* Following search code from  https://www.w3schools.com/howto/howto_js_autocomplete.asp */
+/* Search Bar */
 #userSearch {
     outline: none;
 }
